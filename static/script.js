@@ -8,6 +8,15 @@ function addBubble(text, who) {
   const row = document.createElement("div");
   row.className = `row ${who}`;
 
+  // Avatar for bot messages
+  if (who === "bot") {
+    const avatar = document.createElement("img");
+    avatar.className = "avatar";
+    avatar.src = "/static/typhoon-avatar.png";
+    avatar.alt = "Typhoon";
+    row.appendChild(avatar);
+  }
+
   const bubble = document.createElement("div");
   bubble.className = "bubble";
   bubble.textContent = text;
@@ -16,7 +25,7 @@ function addBubble(text, who) {
   chat.appendChild(row);
   chat.scrollTop = chat.scrollHeight;
 
-  return bubble; // useful for updating "typing…" bubbles
+  return bubble;
 }
 
 function setInputEnabled(enabled) {

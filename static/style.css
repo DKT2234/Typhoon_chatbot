@@ -100,6 +100,25 @@ body::after {
   margin: 10px 0;
 }
 
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid var(--stroke);
+  margin-right: 10px;
+  flex: 0 0 auto;
+}
+
+.row.bot {
+  align-items: flex-end;
+}
+
+.row.user {
+  align-items: flex-end;
+}
+
+
 .row.user { justify-content: flex-end; }
 .row.bot  { justify-content: flex-start; }
 
