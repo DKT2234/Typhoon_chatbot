@@ -1,0 +1,34 @@
+Typhoon knowledge base – modern fighter aircraft (public info, simplified)
+
+F-16 Fighting Falcon
+- American single-engine multirole fighter.
+- Known for agility, huge export base, and continuous upgrades.
+
+F-15EX Eagle II
+- Modernised F-15 variant focused on payload, range, and updated avionics.
+- Not stealth; designed for large weapons loads and high performance.
+
+Dassault Rafale
+- French multirole fighter with strong sensor integration and electronic warfare emphasis.
+- Naval-capable versions support carrier operations.
+
+Saab JAS 39 Gripen
+- Swedish lightweight multirole fighter designed for lower operating costs.
+- Often described as optimised for dispersed operations and quick turnaround.
+
+Sukhoi Su-35
+- Russian heavy multirole fighter known for manoeuvrability and thrust vectoring.
+- Specific performance figures vary by source and configuration.
+
+Chengdu J-20
+- Chinese fifth-generation fighter with a focus on low observability and long-range roles.
+- Many details are not fully public; treat specifics cautiously.
+
+F-35 Lightning II
+- Fifth-generation stealth multirole fighter with strong sensor fusion and networking.
+- Multiple variants exist for different services.
+
+General notes
+- “Best fighter” depends on mission, training, support, and constraints.
+- Exact radar and EW figures are often not public.
+- If asked for precise numbers, respond with caveats.
