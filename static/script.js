@@ -2,15 +2,35 @@ const chat = document.getElementById("chat");
 const form = document.getElementById("form");
 const input = document.getElementById("msg");
 const send = document.getElementById("send");
+const clearBtn = document.getElementById("clear");
 
 function addBubble(text, who) {
-  const div = document.createElement("div");
-  div.className = `bubble ${who}`;
-  div.textContent = text;
-  chat.appendChild(div);
+  const row = document.createElement("div");
+  row.className = `row ${who}`;
+
+  const bubble = document.createElement("div");
+  bubble.className = "bubble";
+  bubble.textContent = text;
+
+  row.appendChild(bubble);
+  chat.appendChild(row);
   chat.scrollTop = chat.scrollHeight;
+
+  return bubble; // useful for updating "typing…" bubbles
 }
 
+function setInputEnabled(enabled) {
+  send.disabled = !enabled;
+  input.disabled = !enabled;
+}
+
+clearBtn.addEventListener("click", () => {
+  chat.innerHTML = "";
+  addBubble("Hello, I’m Typhoon. Ask me about modern fighter jets.", "bot");
+  input.focus();
+});
+
+// First greeting
 addBubble("Hello, I’m Typhoon. Ask me about modern fighter jets.", "bot");
 
 form.addEventListener("submit", async (e) => {
@@ -22,9 +42,8 @@ form.addEventListener("submit", async (e) => {
   input.value = "";
   addBubble(text, "user");
 
-  send.disabled = true;
-  addBubble("Thinking…", "bot");
-  const thinkingBubble = chat.lastChild;
+  setInputEnabled(false);
+  const typingBubble = addBubble("Typing…", "bot");
 
   try {
     const res = await fetch("/chatbot", {
@@ -34,11 +53,11 @@ form.addEventListener("submit", async (e) => {
     });
 
     const data = await res.json();
-    thinkingBubble.textContent = data.response || "No response returned.";
+    typingBubble.textContent = (data && data.response) ? data.response : "No response returned.";
   } catch (err) {
-    thinkingBubble.textContent = "Typhoon hit an error: " + err.message;
+    typingBubble.textContent = "Typhoon hit an error: " + err.message;
   } finally {
-    send.disabled = false;
+    setInputEnabled(true);
     input.focus();
   }
 });

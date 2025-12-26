@@ -2,23 +2,30 @@
 <html lang="en-GB">
 <head>
   <meta charset="utf-8" />
-  <title>Typhoon</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Typhoon</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <main class="wrap">
-    <header class="topbar">
-      <h1>Typhoon</h1>
-      <p class="subtitle">Modern fighter aircraft specialist</p>
-    </header>
+  <main class="page">
+    <section class="card">
+      <header class="header">
+        <div class="title">
+          <h1>Typhoon</h1>
+          <p class="subtitle">Modern fighter aircraft specialist</p>
+        </div>
+        <button id="clear" class="ghost" type="button">Clear</button>
+      </header>
 
-    <section id="chat" class="chat" aria-live="polite"></section>
+      <section id="chat" class="chat" aria-live="polite"></section>
 
-    <form id="form" class="composer">
-      <input id="msg" placeholder="Ask about fighter jets…" autocomplete="off" />
-      <button id="send" type="submit">Send</button>
-    </form>
+      <form id="form" class="composer" autocomplete="off">
+        <input id="msg" class="input" placeholder="Ask about fighter jets…" />
+        <button id="send" class="send" type="submit">Send</button>
+      </form>
+
+      <p class="hint">Tip: try “Compare Rafale vs F-35” or “Explain 4.5 gen vs 5th gen”.</p>
+    </section>
   </main>
 
   <script src="{{ url_for('static', filename='script.js') }}"></script>
